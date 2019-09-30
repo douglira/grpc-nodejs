@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service NoteProto {
+  rpc GetNotes (Empty) returns (NoteList) {}
+}
+
+message Empty {}
+
+message Note {
+  required string id = 1;
+  required string title = 2;
+  required string content = 3;
+}
+
+message NoteList {
+  repeated Note notes = 1;
+}
